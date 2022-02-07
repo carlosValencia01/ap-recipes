@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { RecipeCard } from "../shared/RecipeCard";
 
@@ -15,7 +15,7 @@ export const ListCategoryScreen = () => {
       )
       .then((response) => setRecipes(response.data.recipes));
     // empty dependency array means this effect will only run once (like  componentDidMount in classes)
-  }, []);
+  }, [category]);
 
   if (!recipes) {
     return null;

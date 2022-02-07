@@ -13,10 +13,10 @@ export const RecipeScreen = () => {
     axios
       .get("https://recipes-api-carlos.herokuapp.com/api/recipes/")
       .then((response) =>
-        setRecipes(response.data.recipes.filter((res) => res._id == _id))
+        setRecipes(response.data.recipes.filter((res) => res._id === _id))
       );
     // empty dependency array means this effect will only run once (like  componentDidMount in classes)
-  }, []);
+  }, [_id]);
 
   if (!recipes) {
     return null;
@@ -65,6 +65,7 @@ export const RecipeScreen = () => {
         <div className="w-full lg:w-2/5">
           <img
             src={recipes[0].image}
+            alt={recipes[0].title}
             className="rounded-none lg:rounded-lg shadow-2xl lg:block"
           />
         </div>
