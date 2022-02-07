@@ -4,11 +4,13 @@ import { ListCategoryScreen } from "../category/ListCategoryScreen";
 import { MainScreen } from "../main/MainScreen";
 import { NewRecipeScreen } from "../recipe/NewRecipeScreen";
 import { RecipeScreen } from "../recipe/RecipeScreen";
+import { Navbar } from "../ui/Navbar";
 
 export const AppRouter = () => {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<MainScreen />} />
           <Route path="/recipe/:_id" element={<RecipeScreen />} />
