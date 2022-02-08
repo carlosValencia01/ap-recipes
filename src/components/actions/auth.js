@@ -1,6 +1,5 @@
 import { types } from "../types/types";
 import { firebase, googleAuthProvider } from "../firebase/firebase-config";
-import { Navigate } from "react-router-dom";
 
 export const startGoogleLogin = () => {
   return (dispatch) => {
