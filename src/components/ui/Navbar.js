@@ -14,9 +14,9 @@ export const Navbar = () => {
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
-              <Link to={`/`} className="flex">
+              <Link to={`/login`} className="flex">
                 <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-gray-600 hover:text-gray-800">
-                  Home
+                  Login
                 </span>
               </Link>
             </li>

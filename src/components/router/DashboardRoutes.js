@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ListCategoryScreen } from "../category/ListCategoryScreen";
 import { MainScreen } from "../main/MainScreen";
 import { NewRecipeScreen } from "../recipe/NewRecipeScreen";

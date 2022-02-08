@@ -23,7 +23,7 @@ export const ListCategoryScreen = () => {
 
   return (
     <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="max-w-2xl mx-auto px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
         <Link
           to={`/category/Food`}
           className="p-1 pl-5 pr-5 mr-2 bg-green-700 hover:bg-green-900 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
