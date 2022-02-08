@@ -126,66 +126,66 @@ export const RecipeScreen = () => {
               className="rounded-none lg:rounded-lg shadow-2xl lg:block"
             />
           </div>
-        </div>
-        <div className="max-w-4xl flex items-center h-auto lg:h-screen mx-auto my-40">
-          <div className="w-full lg:w-5/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-            <div className="p-4 md:p-12 text-center lg:text-left">
-              <h1 className="text-3xl font-bold pt-1 lg:pt-4">Comments</h1>
+          <div className="max-w-4xl flex items-center h-auto lg:h-screen mx-auto my-32">
+            <div className="w-full lg:w-5/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
               <div className="p-4 md:p-12 text-center lg:text-left">
-                <form onSubmit={handleRegister}>
-                  <input
-                    className="border-gray-300 mb-4 w-96 border-solid border rounded py-2 px-4"
-                    type="text"
-                    placeholder="Name"
-                    name="author"
-                    value={author}
-                    onChange={handleInputChange}
-                  />
-                  <input
-                    className="border-gray-300 mb-4 w-96 border-solid border rounded py-2 px-4"
-                    type="text"
-                    placeholder="Write a comment"
-                    name="comment"
-                    value={comment}
-                    onChange={handleInputChange}
-                  />
-                  {msgError && (
-                    <div className="bg-red-700 text-white flex justify-center">
-                      {msgError}
-                    </div>
-                  )}
+                <h1 className="text-3xl font-bold pt-1 lg:pt-4">Comments</h1>
+                <div className="p-4 md:p-12 text-center lg:text-left">
+                  <form onSubmit={handleRegister}>
+                    <input
+                      className="border-gray-300 mb-4 w-96 border-solid border rounded py-2 px-4"
+                      type="text"
+                      placeholder="Name"
+                      name="author"
+                      value={author}
+                      onChange={handleInputChange}
+                    />
+                    <input
+                      className="border-gray-300 mb-4 w-96 border-solid border rounded py-2 px-4"
+                      type="text"
+                      placeholder="Write a comment"
+                      name="comment"
+                      value={comment}
+                      onChange={handleInputChange}
+                    />
+                    {msgError && (
+                      <div className="bg-red-700 text-white flex justify-center">
+                        {msgError}
+                      </div>
+                    )}
 
-                  <div className="pt-4 pb-8 pl-3">
-                    <button
-                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full"
-                      type="submit"
-                    >
-                      Save
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
-              {myComment && (
-                <div className="">
-                  <h2>{myComment.author}</h2>
-                  <h2>{myComment.comment}</h2>
-                  <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                    <div className="pt-4 pb-8 pl-3">
+                      <button
+                        className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full"
+                        type="submit"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </form>
                 </div>
-              )}
-              {comments.length === 0
-                ? !myComment && (
-                    <div className="justify-center">
-                      <h2>No comments yet</h2>
-                    </div>
-                  )
-                : comments.map((comment) => (
-                    <div key={comment._id} className="">
-                      <h2>{comment.author}</h2>
-                      <h2>{comment.comment}</h2>
-                      <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
-                    </div>
-                  ))}
+                <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                {myComment && (
+                  <div className="">
+                    <h2>{myComment.author}</h2>
+                    <h2>{myComment.comment}</h2>
+                    <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                  </div>
+                )}
+                {comments.length === 0
+                  ? !myComment && (
+                      <div className="justify-center">
+                        <h2>No comments yet</h2>
+                      </div>
+                    )
+                  : comments.map((comment) => (
+                      <div key={comment._id} className="">
+                        <h2>{comment.author}</h2>
+                        <h2>{comment.comment}</h2>
+                        <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                      </div>
+                    ))}
+              </div>
             </div>
           </div>
         </div>
