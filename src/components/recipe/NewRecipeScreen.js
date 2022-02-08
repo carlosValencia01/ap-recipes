@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "../hooks/useForm";
 import axios from "axios";
 
 export const NewRecipeScreen = () => {
-  const [formValues, handleInputChange] = useForm({
+  const [formValues, handleInputChange, reset] = useForm({
     title: "",
     category: "",
     ingredients: "",
@@ -26,18 +26,48 @@ export const NewRecipeScreen = () => {
     category: category,
   };
 
+  const [msgError, setMsgError] = useState(null);
+
   const postData = () => {
     axios
       .post("https://recipes-api-carlos.herokuapp.com/api/recipes", recipe)
       .then((response) => {
         console.log(response);
+        window.alert(`${title} saved`);
+        reset();
       })
       .catch((error) => console.log(error));
   };
 
   const handleRegister = (e) => {
     e.preventDefault();
-    postData();
+    if (isFormValid()) {
+      postData();
+    }
+  };
+
+  const isFormValid = () => {
+    if (title.trim().length === 0) {
+      setMsgError("Title is required");
+      return false;
+    } else if (category === "") {
+      setMsgError("Select a category");
+      return false;
+    } else if (ingredients.trim().length === 0) {
+      setMsgError("Ingredients is required");
+      return false;
+    } else if (process.trim().length === 0) {
+      setMsgError("Process is required");
+      return false;
+    } else if (image.trim().length === 0) {
+      setMsgError("Add an image URL");
+      return false;
+    } else if (description.trim().length === 0) {
+      setMsgError("Add a description");
+      return false;
+    }
+    setMsgError(null);
+    return true;
   };
 
   return (
@@ -135,6 +165,12 @@ export const NewRecipeScreen = () => {
                 value={description}
                 onChange={handleInputChange}
               />
+
+              {msgError && (
+                <div className="bg-red-700 text-white flex justify-center">
+                  {msgError}
+                </div>
+              )}
 
               <div className="pt-4 pb-8 pl-3">
                 <button
