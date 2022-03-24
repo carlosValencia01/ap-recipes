@@ -20,13 +20,13 @@ export const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={`/login`} className="flex">
                 <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-gray-600 hover:text-gray-800">
                   Login
                 </span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

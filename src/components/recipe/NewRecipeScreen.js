@@ -3,14 +3,7 @@ import { useForm } from "../hooks/useForm";
 import axios from "axios";
 
 export const NewRecipeScreen = () => {
-  const [formValues, handleInputChange, reset] = useForm({
-    title: "",
-    category: "",
-    ingredients: "",
-    process: "",
-    image: "",
-    description: "",
-  });
+  
 
   const { title, category, ingredients, process, image, description } =
     formValues;
